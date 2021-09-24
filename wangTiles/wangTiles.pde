@@ -10,7 +10,7 @@ final int sphereWidth = 5;
 final int mapWidth = 64;
 //String FILENAME = "dungeon.png";
 //String FILENAME = "wangTiles_classic.png";
-String FILENAME = "tiles.png";
+String FILENAME = "wangTiles_adjusted_for_wave.png";
 //String FILENAME = "dungeon.png";
 //String FILENAME = "wangTiles_classic.png";
 ArrayList<Tile> wangTiles;
@@ -26,7 +26,9 @@ void settings(){
 
 void setup() {
   final int windowWidth = tileWidth * mapWidth;
-  size(windowWidth, windowWidth);
+  //size(windowWidth, windowWidth);
+  surface.setResizable(true);
+  surface.setSize(windowWidth, windowWidth);
   tilesImage = loadImage(FILENAME);
   wangTiles = parseTilesIntoSet();
 
@@ -79,7 +81,7 @@ void draw() {
     map.drawGrid();
   }
   //save("output/" + frames.toString() + ".png");
-  saveFrame("frame-######.png");
+  saveFrame("generatedFrame/frame-######.png");
   frames++;
 }
 
